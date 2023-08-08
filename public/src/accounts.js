@@ -8,10 +8,8 @@ function sortAccountsByLastName(accounts) {
  );
  return accounts;
 }
-function getTotalNumberOfBorrows(account, books) {
-  return books.reduce((totalBorrows, book) => {
-    return totalBorrows + book.borrows.filter(borrow => borrow.id === account.id).length;
-  }, 0);
+function countBorrowsForAccount(book, accountId) {
+  return book.borrows.filter(borrow => borrow.id === accountId).length;
 }
 
 
