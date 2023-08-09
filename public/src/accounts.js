@@ -8,9 +8,11 @@ function sortAccountsByLastName(accounts) {
  );
  return accounts;
 }
-function countBorrowsForAccount(book, accountId) {
-  return book.borrows.filter(borrow => borrow.id === accountId).length;
+function calculateAmountOwed(book, accountId, bookPrice) {
+  const borrowsForAccount = countBorrowsForAccount(book, accountId);
+  return borrowsForAccount * bookPrice;
 }
+
 
 
 function getBooksPossessedByAccount(account, books, authors) {
